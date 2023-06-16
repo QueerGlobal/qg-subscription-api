@@ -47,6 +47,7 @@ paths:
           required: true
           schema:
             type: string
+            format: uuid
       responses:
         '200':
           description: subscription response
@@ -70,8 +71,8 @@ paths:
           description: ID of subscription to delete
           required: true
           schema:
-            type: integer
-            format: int64
+            type: string
+            format: uuid
       responses:
         '204':
           description: subscription deleted
@@ -92,8 +93,8 @@ paths:
           description: ID of subscription to delete
           required: true
           schema:
-            type: integer
-            format: int64
+            type: string
+            format: uuid
       requestBody:
         description: Subscription to update to the page
         required: true
@@ -152,8 +153,7 @@ paths:
           description: ID of user to fetch
           required: false
           schema:
-            type: integer
-            format: int64
+            type: string
 
       responses:
         '200':
@@ -204,11 +204,11 @@ components:
         - OwnerPersonID
       properties:
         subscriptionID:
-          type: number
-          format: int64
+          type: string
+          format: uuid
         OwnerPersonID:
-          type: number
-          format: int64
+          type: string
+          format: uuid
         subscriptionType:
           type: object
           $ref: '#/components/schemas/SubscriptionType'
